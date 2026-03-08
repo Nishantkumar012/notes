@@ -17,7 +17,7 @@ export const createUser = async (data: any) => {
     throw new Error("User already exists");
   } 
 
-  const hashedPassword = await bcrypt.hash(data.password,10);
+  const hashedPassword = await bcrypt.hash(data.password, 10);
      
     const user = await prisma.user.create({
         data:{
@@ -31,10 +31,10 @@ export const createUser = async (data: any) => {
 }
 
 
-
-
-
 export const findUser = async(data:any) =>{
+
+
+
         
        const user = await prisma.user.findUnique({
            where: {email: data.email}
@@ -53,7 +53,7 @@ export const findUser = async(data:any) =>{
              throw new Error("Invalid credentials");
        }
         
-         const token = jwt.sign({userId:user.id},  '10');
+         const token = jwt.sign({userId:user.id},  process.env.JWT_SECRET as string );
 
     return {
         
@@ -66,3 +66,12 @@ export const findUser = async(data:any) =>{
         token};
 
     }
+
+
+export const me = async (userId: any) => {
+
+    // console.log(userId);
+
+    return userId;
+
+};

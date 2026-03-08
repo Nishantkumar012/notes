@@ -1,5 +1,5 @@
 import {Request,Response} from 'express';
-import { createUser,findUser } from '../services/userService';
+import { createUser,findUser,me } from '../services/userService';
 
 
 
@@ -50,3 +50,16 @@ export const signup = async(req:Request,res:Response) =>{
                });
            }
  }
+
+
+export const myProfile = async (req: Request, res: Response) => {
+
+    const userId = (req as any).user.userId;
+
+    const data = await me(userId);
+
+    res.json({
+        message: "user id mil gaya",
+        userId: data
+    });
+};
