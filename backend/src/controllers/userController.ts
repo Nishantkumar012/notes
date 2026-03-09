@@ -54,7 +54,9 @@ export const signup = async(req:Request,res:Response) =>{
 
 export const myProfile = async (req: Request, res: Response) => {
 
-    const userId = (req as any).user.userId;
+    // const userId = (req as any).user.userId;
+                  const userId = req.userId
+
 
     const data = await me(userId);
 

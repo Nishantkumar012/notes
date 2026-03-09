@@ -1,7 +1,19 @@
 
 import {Request,Response,NextFunction} from 'express'
 
+// import jwt ,jwtPayload from 'jsonwebtoken';
+import { JwtPayload } from "jsonwebtoken";
 import jwt from 'jsonwebtoken';
+
+declare global{
+    namespace Express{
+         interface Request{
+            user: JwtPayload,
+            userId : string
+         }
+        
+    }
+}
 
 
 
@@ -25,7 +37,9 @@ export const authMiddleware = (
                   const decoded = jwt.verify(token!, process.env.JWT_SECRET as string);
                 
                 
-                  (req as any).user = decoded;
+                  // (req as any).user = decoded;
+
+                     req.user = decoded as any
 
                 //   console.log((req as any).user);
 

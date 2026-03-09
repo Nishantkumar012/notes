@@ -13,7 +13,7 @@ app.get("/health",(req,res)=>{
 })
 
 app.use("/api/auth", authRoutes);
-app.use("/api/note",authMiddleware, noteRoutes);
+app.use("/api/note", noteRoutes);
 
 
 export default app;
