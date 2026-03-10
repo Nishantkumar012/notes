@@ -1,4 +1,6 @@
 import React from 'react'
+import InputField from '../components/InputField'
+import SocialButton from '../components/SocialButton'
 
 function Login() {
   return (
@@ -8,23 +10,17 @@ function Login() {
         <p className="text-center text-sm  ">Securely access your account</p>
 
         <form className="space-y-1 mt-8">
-          <label className="text-sm font-medium">Email Address</label>
-          <input
+          <InputField
+            label="Email Address"
             type="text"
             placeholder="name@gmail.com"
-            className="w-full rounded-lg p-2 bg-slate-200"
           />
 
-          <div className="flex justify-between items-center mt-5">
-            <label className="text-sm font-medium">Password</label>
-            <span className="text-sm font-medium text-teal-500 cursor-pointer">
-              Forgot Password?
-            </span>
-          </div>
-
-          <input
+          <InputField
+            label="Password"
             type="password"
-            className="w-full rounded-lg p-2 bg-slate-200"
+            placeholder="Password"
+            rightText="Forgot Password?"
           />
 
           <button className="bg-teal-500  mt-5 text-white py-2 rounded-xl w-full ">
@@ -36,28 +32,22 @@ function Login() {
             <p className="text-sm text-gray-500">or continue with</p>
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
-          <div className="w-full flex gap-3">
-            <button className="flex items-center justify-center gap-2 w-full bg-slate-100 rounded-lg py-2 hover:bg-gray-200">
-              <img
-                src="https://www.svgrepo.com/show/475656/google-color.svg"
-                alt="google"
-                className="w-5 h-5"
-              />
-              <span className="text-sm font-medium">Google</span>
-            </button>
+          <div className="w-full flex justify-around gap-3">
+            <SocialButton
+              icon="https://www.svgrepo.com/show/475656/google-color.svg"
+              text="Google"
+            />
 
-            <button className="flex items-center justify-center gap-2 w-full bg-slate-100 rounded-lg py-2 hover:bg-gray-200">
-              <img
-                src="https://www.svgrepo.com/show/448234/linkedin.svg"
-                alt="linkedin"
-                className="w-5 h-5"
-              />
-              <span className="text-sm font-medium">LinkedIn</span>
-            </button>
+            <SocialButton
+              icon="https://www.svgrepo.com/show/448234/linkedin.svg"
+              text="Linkedin"
+            />
           </div>
           <p className="mt-5 text-center text-sm">
             Dont have account ?{' '}
-            <span className="text-teal-500 font-medium">sign up</span>{' '}
+            <span className="text-teal-500 text-sm font-medium cursor-pointer">
+              sign up
+            </span>{' '}
           </p>
         </form>
       </div>
