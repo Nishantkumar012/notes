@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import { Outlet } from "react-router-dom"
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div>
-
-      <Navbar/>
+      <Navbar />
       <h1>Hello</h1>
       {/* <Outlet /> */}
       {/* <Footer/> */}
