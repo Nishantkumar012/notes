@@ -1,3 +1,20 @@
+import AuthButton from '../components/AuthButton'
+import InputField from '../components/InputField'
+import {
+  Mail,
+  Lock,
+  Eye,
+  Plus,
+  Trash,
+  Pencil,
+  LogOut,
+  FileText,
+  LockIcon,
+  User,
+  User2Icon,
+  UserRound
+} from "lucide-react";
+
 function Signup() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100">
@@ -8,30 +25,17 @@ function Signup() {
         </p>
 
         <form className="space-y-4">
-          <label className="text-sm font-medium">Full Name</label>
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full  p-2 rounded-lg bg-slate-200"
-          />
+          <InputField label="Full name" type="text" placeholder="Full name" icon={UserRound}/>
 
-          <label className="text-sm font-medium">Email</label>
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full  p-2 rounded-lg bg-slate-200"
-          />
+          <InputField label="Email" type="text" placeholder="name@gmail.com" icon={Mail}/>
 
-          <label className="text-sm font-medium">Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full  p-2 rounded-lg bg-slate-200"
-          />
+          <InputField label="password" type="password" placeholder="Password" icon={Lock} rightIcon={Eye}/>
 
-          <button className="w-full mt-5 bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600">
+          {/* <button className="w-full mt-5 bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600">
             Create Account
-          </button>
+          </button> */}
+
+          <AuthButton text="Create Account" />
 
           <p className="text-center ">
             already have an account?{' '}
