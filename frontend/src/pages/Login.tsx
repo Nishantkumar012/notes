@@ -1,6 +1,18 @@
 import React from 'react'
 import InputField from '../components/InputField'
 import SocialButton from '../components/SocialButton'
+import AuthButton from '../components/AuthButton'
+import {
+  Mail,
+  Lock,
+  Eye,
+  Plus,
+  Trash,
+  Pencil,
+  LogOut,
+  FileText,
+  LockIcon
+} from "lucide-react";
 
 function Login() {
   return (
@@ -10,10 +22,12 @@ function Login() {
         <p className="text-center text-sm  ">Securely access your account</p>
 
         <form className="space-y-1 mt-8">
+
           <InputField
             label="Email Address"
             type="text"
             placeholder="name@gmail.com"
+            icon={Mail}
           />
 
           <InputField
@@ -21,12 +35,15 @@ function Login() {
             type="password"
             placeholder="Password"
             rightText="Forgot Password?"
+            icon={LockIcon}
+            rightIcon={Eye}
           />
 
-          <button className="bg-teal-500  mt-5 text-white py-2 rounded-xl w-full ">
+          {/* <button className="bg-teal-500  mt-5 text-white py-2 rounded-xl w-full ">
             button
           </button>
-
+            */}
+           <AuthButton text='Log in'/>
           <div className="flex items-center gap-3 my-4">
             <div className="flex-1 h-px bg-gray-300"></div>
             <p className="text-sm text-gray-500">or continue with</p>
@@ -42,6 +59,7 @@ function Login() {
               icon="https://www.svgrepo.com/show/448234/linkedin.svg"
               text="Linkedin"
             />
+              
           </div>
           <p className="mt-5 text-center text-sm">
             Dont have account ?{' '}

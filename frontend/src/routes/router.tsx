@@ -3,6 +3,7 @@ import App from '../App'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Notes from '../pages/NotesPage'
+import Dashboard from '../pages/Dashboard'
 
 export const router = createBrowserRouter([
   {
@@ -27,4 +28,8 @@ export const router = createBrowserRouter([
     path: '/notes',
     element: <Notes />,
   },
+  {
+    path:'/dash',
+    element: <Dashboard/>
+  }
 ])

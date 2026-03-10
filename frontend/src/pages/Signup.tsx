@@ -1,5 +1,19 @@
 import AuthButton from '../components/AuthButton'
 import InputField from '../components/InputField'
+import {
+  Mail,
+  Lock,
+  Eye,
+  Plus,
+  Trash,
+  Pencil,
+  LogOut,
+  FileText,
+  LockIcon,
+  User,
+  User2Icon,
+  UserRound
+} from "lucide-react";
 
 function Signup() {
   return (
@@ -11,11 +25,11 @@ function Signup() {
         </p>
 
         <form className="space-y-4">
-          <InputField label="Full name" type="text" placeholder="Full name" />
+          <InputField label="Full name" type="text" placeholder="Full name" icon={UserRound}/>
 
-          <InputField label="Email" type="text" placeholder="name@gmail.com" />
+          <InputField label="Email" type="text" placeholder="name@gmail.com" icon={Mail}/>
 
-          <InputField label="password" type="password" placeholder="Password" />
+          <InputField label="password" type="password" placeholder="Password" icon={Lock} rightIcon={Eye}/>
 
           {/* <button className="w-full mt-5 bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600">
             Create Account
