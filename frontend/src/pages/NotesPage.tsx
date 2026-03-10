@@ -4,9 +4,9 @@ import NoteCard from '../components/NoteCard'
 
 export default function NotesPage() {
   return (
-      <div>
-         <NoteForm/>
-         <NoteCard/>   
-      </div>
+    <div>
+      <NoteForm />
+      <NoteCard />
+    </div>
   )
 }
