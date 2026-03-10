@@ -46,7 +46,7 @@ function Login() {
           <p className="mt-5 text-center text-sm">
             Dont have account ?{' '}
             <span className="text-teal-500 text-sm font-medium cursor-pointer">
-              sign up
+              sign up 
             </span>{' '}
           </p>
         </form>
