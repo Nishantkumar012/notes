@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
     element: <Notes />,
   },
   {
-    path:'/dash',
-    element: <Dashboard/>
-  }
+    path: '/dash',
+    element: <Dashboard />,
+  },
 ])

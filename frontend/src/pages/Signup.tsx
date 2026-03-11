@@ -12,8 +12,8 @@ import {
   LockIcon,
   User,
   User2Icon,
-  UserRound
-} from "lucide-react";
+  UserRound,
+} from 'lucide-react'
 
 function Signup() {
   return (
@@ -25,11 +25,27 @@ function Signup() {
         </p>
 
         <form className="space-y-4">
-          <InputField label="Full name" type="text" placeholder="Full name" icon={UserRound}/>
+          <InputField
+            label="Full name"
+            type="text"
+            placeholder="Full name"
+            icon={UserRound}
+          />
 
-          <InputField label="Email" type="text" placeholder="name@gmail.com" icon={Mail}/>
+          <InputField
+            label="Email"
+            type="text"
+            placeholder="name@gmail.com"
+            icon={Mail}
+          />
 
-          <InputField label="password" type="password" placeholder="Password" icon={Lock} rightIcon={Eye}/>
+          <InputField
+            label="password"
+            type="password"
+            placeholder="Password"
+            icon={Lock}
+            rightIcon={Eye}
+          />
 
           {/* <button className="w-full mt-5 bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600">
             Create Account

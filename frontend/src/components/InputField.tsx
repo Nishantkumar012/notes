@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react"
+import type { LucideIcon } from 'lucide-react'
 
 type Props = {
   label: string
@@ -6,10 +6,17 @@ type Props = {
   placeholder?: string
   rightText?: string
   icon?: LucideIcon
-  rightIcon?:LucideIcon
+  rightIcon?: LucideIcon
 }
 
-function InputField({ label, type, placeholder, rightText,icon:Icon, rightIcon:Righticon }: Props) {
+function InputField({
+  label,
+  type,
+  placeholder,
+  rightText,
+  icon: Icon,
+  rightIcon: Righticon,
+}: Props) {
   return (
     <div className="flex flex-col gap-1">
       <div className="flex justify-between items-center">
@@ -23,27 +30,23 @@ function InputField({ label, type, placeholder, rightText,icon:Icon, rightIcon:R
       </div>
 
       {/* lassName="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"  */}
-        
-      <div className="relative ">
 
+      <div className="relative ">
         {Icon && (
-          <Icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"/>
+          <Icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
         )}
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="w-full  rounded-lg p-2 pl-9 bg-slate-200 outline-none focus:ring-2 focus:ring-teal-400"
+        <input
+          type={type}
+          placeholder={placeholder}
+          className="w-full  rounded-lg p-2 pl-9 bg-slate-200 outline-none focus:ring-2 focus:ring-teal-400"
         />
 
-        {
-          Righticon && (
-            <button>
-
-              <Righticon className="absolute right-3 top-1/2 -translate-y-1/2 w-4   text-gray-500 "/>
-            </button>
-          )
-        }
-        </div>
+        {Righticon && (
+          <button>
+            <Righticon className="absolute right-3 top-1/2 -translate-y-1/2 w-4   text-gray-500 " />
+          </button>
+        )}
+      </div>
     </div>
   )
 }
