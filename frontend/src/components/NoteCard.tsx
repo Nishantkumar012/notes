@@ -1,9 +1,7 @@
 import React from 'react'
 
 function NoteCard() {
-  return (
-    <div>NoteCard</div>
-  )
+  return <div>NoteCard</div>
 }
 
 export default NoteCard
