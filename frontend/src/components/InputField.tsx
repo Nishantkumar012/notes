@@ -3,19 +3,25 @@ import type { LucideIcon } from 'lucide-react'
 type Props = {
   label: string
   type: string
+  name: string
+  value: string
   placeholder?: string
   rightText?: string
   icon?: LucideIcon
   rightIcon?: LucideIcon
+  onChange? : (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 function InputField({
   label,
   type,
+  name,
+  value,
   placeholder,
   rightText,
   icon: Icon,
   rightIcon: Righticon,
+  onChange
 }: Props) {
   return (
     <div className="flex flex-col gap-1">
@@ -37,12 +43,15 @@ function InputField({
         )}
         <input
           type={type}
+          name={name}
+          value={value}
+           onChange={onChange}
           placeholder={placeholder}
           className="w-full  rounded-lg p-2 pl-9 bg-slate-200 outline-none focus:ring-2 focus:ring-teal-400"
         />
 
         {Righticon && (
-          <button>
+          <button type='button'>
             <Righticon className="absolute right-3 top-1/2 -translate-y-1/2 w-4   text-gray-500 " />
           </button>
         )}
