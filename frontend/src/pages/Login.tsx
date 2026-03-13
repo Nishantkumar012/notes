@@ -17,53 +17,41 @@ import {
 import { loginUser } from '../services/authService'
 // import { PassThrough } from 'stream'
 
-
-
-
 function Login() {
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
 
- 
-    const [form, setForm ] = useState({ 
-        
-        email: "",
-        password:""
+  const navigate = useNavigate()
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
     })
+  }
 
-        
-    const navigate = useNavigate();
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+    //  console.log("submit trigeered")
 
+    //  console.log(form.email)
+    try {
+      const res = await loginUser({
+        email: form.email,
+        password: form.password,
+      })
+      console.log(res.data)
 
-      const handleChange = ( e: React.ChangeEvent<HTMLInputElement> )=>{
-              
-            setForm({
-               
-                ...form,
-                [e.target.name]:e.target.value
-            })
-      }
+      // console.log("in try")
+      navigate('/dash')
+    } catch (error) {
+      // console.log("in catch")
 
-
-
-      
-const handleSubmit = async(e:any) =>{
-          
-             e.preventDefault();
-             console.log("submit trigeered")
-     try {
-            const res = await loginUser({ email: form.email, password: form.password});
-            console.log(res.data);
-
-            console.log("in try")
-
-            navigate("/dash")
-     } catch (error) {
-            console.log("in catch")
-          
-      console.log(error);
-      
-     }
-}
-
+      console.log(error)
+    }
+  }
 
   return (
     <div className="bg-slate-100 flex min-h-screen items-center justify-center">
@@ -71,38 +59,34 @@ const handleSubmit = async(e:any) =>{
         <h1 className="text-2xl font-bold mb-2 text-center">Welcome back</h1>
         <p className="text-center text-sm  ">Securely access your account</p>
 
-        <form className="space-y-1 mt-8" 
-           onSubmit={handleSubmit}
-         >
+        <form className="space-y-1 mt-8" onSubmit={handleSubmit}>
           <InputField
             label="Email Address"
             type="text"
             placeholder="name@gmail.com"
             icon={Mail}
-            name='email'
+            name="email"
             value={form.email}
             onChange={handleChange}
-            
           />
 
           <InputField
-  label="Password"
-  type="password"
-  name="password"
-  value={form.password}
-  onChange={handleChange}
-  placeholder="Password"
-  rightText="Forgot Password?"
-  icon={LockIcon}
-  rightIcon={Eye}
-/>
-
+            label="Password"
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            placeholder="Password"
+            rightText="Forgot Password?"
+            icon={LockIcon}
+            rightIcon={Eye}
+          />
 
           {/* <button className="bg-teal-500  mt-5 text-white py-2 rounded-xl w-full ">
             button
           </button>
             */}
-            <AuthButton text="Log in" type="submit" />
+          <AuthButton text="Log in" type="submit" />
           <div className="flex items-center gap-3 my-4">
             <div className="flex-1 h-px bg-gray-300"></div>
             <p className="text-sm text-gray-500">or continue with</p>
