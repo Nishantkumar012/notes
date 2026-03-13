@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import MainArea from '../components/layout/MainArea'
 import Sidebar from '../components/sidebar/Sidebar'
 

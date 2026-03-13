@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react'
+// import React, { type ReactElement } from 'react'
 
 type Props = {
   text: string

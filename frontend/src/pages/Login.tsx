@@ -5,13 +5,13 @@ import AuthButton from '../components/AuthButton'
 import { useNavigate } from 'react-router-dom'
 import {
   Mail,
-  Lock,
+  // Lock,
   Eye,
-  Plus,
-  Trash,
-  Pencil,
-  LogOut,
-  FileText,
+  // Plus,
+  // Trash,
+  // Pencil,
+  // LogOut,
+  // FileText,
   LockIcon,
 } from 'lucide-react'
 import { loginUser } from '../services/authService'
