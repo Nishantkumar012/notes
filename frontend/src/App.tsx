@@ -8,7 +8,7 @@ function App() {
     <div>
       <Navbar />
       <h1>Hello</h1>
-      <h1>Hello baccho</h1>
+      <h1>Hello kaccho</h1>
       {/* <Outlet /> */}
       {/* <Footer/> */}
     </div>
