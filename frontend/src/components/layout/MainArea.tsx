@@ -15,7 +15,7 @@ import NotesGrid from '../note/NotesGrid'
 
 function MainArea() {
   return (
-    <div className="flex flex-col flex-1 overflow-y-auto bg-slate-200">
+    <div className="flex flex-col flex-1 overflow-y-auto no-scrollbar bg-slate-200">
       <Topbar />
       <NotesGrid />
     </div>
