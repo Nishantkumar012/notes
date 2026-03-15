@@ -4,6 +4,7 @@ type Props = {
   text: string
   onClick?: () => void
   type?: 'button' | 'submit'
+  
 }
 
 function AuthButton({ text, onClick, type }: Props) {
