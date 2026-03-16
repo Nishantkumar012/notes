@@ -2,7 +2,6 @@
 import Topbar from '../topbar/Topbar'
 import NotesGrid from '../note/NotesGrid'
 
-
 // function MainArea() {
 //   return (
 //     <div className="w-full h-screen bg-red-300 flex flex-col ">
@@ -11,7 +10,6 @@ import NotesGrid from '../note/NotesGrid'
 //     </div>
 //   )
 // }
-
 
 function MainArea() {
   return (

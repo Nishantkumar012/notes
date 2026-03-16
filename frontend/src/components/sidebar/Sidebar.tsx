@@ -13,9 +13,7 @@ import AuthButton from '../AuthButton'
 
 function Sidebar() {
   return (
-   
-
-    <aside className="w-64 shrink-0 bg-white border-r border-slate-200 flex flex-col h-full" >
+    <aside className="w-64 shrink-0 bg-white border-r border-slate-200 flex flex-col h-full">
       <div className="p-6 flex items-center gap-3">
         <div className="bg-teal-600 w-10 h-10 rounded-lg flex items-center justify-center text-white">
           <StickyNote className="w-40" />

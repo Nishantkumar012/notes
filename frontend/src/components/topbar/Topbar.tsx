@@ -1,17 +1,13 @@
 // import React from 'react'
 
-import {  SearchIcon } from "lucide-react"
-import InputField from "../InputField"
+import { SearchIcon } from 'lucide-react'
+import InputField from '../InputField'
 // import AuthButton from "../AuthButton"
-import Button from "../buttons/Button"
-
+import Button from '../buttons/Button'
 
 function Topbar() {
-  
-  
   return (
     <div className="flex bg-white p-3 gap-4 items-center justify-between">
-
       <div className="flex items-center justify-between  gap-4 w-2/3">
         <InputField
           type="text"
@@ -31,15 +27,10 @@ function Topbar() {
           alt="profile"
           className="w-9 h-9 rounded-full"
         />
-        <span className="text-sm font-medium text-slate-700">
-          Nishant
-        </span>
+        <span className="text-sm font-medium text-slate-700">Nishant</span>
       </div>
-
     </div>
   )
 }
-
-
 
 export default Topbar
