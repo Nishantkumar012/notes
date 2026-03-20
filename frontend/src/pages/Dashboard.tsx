@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar/Sidebar'
 
 function Dashboard() {
   return (
-    <div className="min-h-screen flex ">
+    <div className="h-screen flex ">
       <Sidebar />
       <MainArea />
     </div>
