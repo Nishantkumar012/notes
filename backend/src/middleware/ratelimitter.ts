@@ -1,55 +1,49 @@
-
-import { Request, Response ,NextFunction} from 'express';
+import { Request, Response, NextFunction } from "express";
 
 const request = new Map();
 
+export const rateLimit = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const ip = req.ip;
 
+  const limit = 5;
 
-export const rateLimit = async(req:Request,res:Response,next:NextFunction)=>{
-             
-        const  ip = req.ip;
+  const windowTime = 60000; //1 minute m only 5 req
 
-        const limit = 5;
+  const currentTIme = Date.now();
 
-        const windowTime = 60000; //1 minute m only 5 req
+  // if not ip means, pehli baar aaya to count 1, start time current time
+  if (!request.has(ip)) {
+    request.set(ip, {
+      count: 1,
+      startTime: currentTIme,
+    });
 
-        const currentTIme = Date.now();
+    return next();
+  }
 
-      // if not ip means, pehli baar aaya to count 1, start time current time  
-        if(!request.has(ip)){
-              
-              request.set(ip,{
-                   count :1,
-                   startTime: currentTIme
-                })
+  // ip pehle se h
+  const userData = request.get(ip);
 
-                return next();
-            }
+  // abhi bhi ek min ke andar h
+  if (currentTIme - userData.startTime < windowTime) {
+    userData.count++;
 
-          
-            // ip pehle se h
-            const userData =request.get(ip);
-              
-            // abhi bhi ek min ke andar h
-             if(currentTIme - userData.startTime < windowTime){
-                    
-                   userData.count++;
+    if (userData.count > limit) {
+      return res.status(429).json({
+        message: "To many requests",
+      });
+    }
+  } else {
+    // matlab doosri window m agye h hum to ab dobara se sab ko original se shuru krna
+    request.set(ip, {
+      count: 1,
+      startTime: currentTIme,
+    });
+  }
 
-                   if(userData.count > limit ){
-                      
-                      return res.status(429).json({
-                           message: "To many requests"
-                       })
-                   }
-             }
-
-              else{ // matlab doosri window m agye h hum to ab dobara se sab ko original se shuru krna
-                       request.set(ip,{
-                           count:1,
-                           startTime:currentTIme
-                       })
-              }
-
-              next();
-
-}
+  next();
+};
