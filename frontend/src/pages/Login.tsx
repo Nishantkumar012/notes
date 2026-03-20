@@ -42,9 +42,15 @@ function Login() {
         email: form.email,
         password: form.password,
       })
-      console.log(res.data)
+      // console.log(res.data)
 
-      // console.log("in try")
+      // localStorage.setItem("token")
+
+      const token = res.data.token // 👈 backend se aata hai
+
+      localStorage.setItem('token', token)
+
+      console.log('token')
       navigate('/dash')
     } catch (error) {
       // console.log("in catch")
