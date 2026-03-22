@@ -1,11 +1,13 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: import.meta.env.VITE_API_URL,
   // baseURL: 'http://13.235.243.35:3000/api',
   withCredentials: true,
 })
 
+
+console.log("check kr rha hu", import.meta.env.VITE_API_URL);
 // 🔥 REQUEST INTERCEPTOR
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
