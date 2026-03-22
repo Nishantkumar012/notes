@@ -25,6 +25,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+        # Debug for only
+      - name: Debug ENV
+        run: echo "API URL is $VITE_API_URL"
+        env:
+         VITE_API_URL: ${{ secrets.VITE_API_URL }}  
+
       - name: Build frontend
         run: npm run build
         env:
@@ -39,7 +45,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: frontend/dist
+          SOURCE_DIR: dist
 
 
   backend:
