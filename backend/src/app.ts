@@ -35,6 +35,9 @@ app.use(
   })
 );
 
+// 🔥 IMPORTANT
+app.options("*", cors());
+
 
 // pehle
 
