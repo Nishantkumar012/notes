@@ -11,7 +11,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.FRONTEND_URL,
+  // process.env.FRONTEND_URL,
+   "http://second-brain23.s3-website.ap-south-1.amazonaws.com",
 ];
 
 app.use(
