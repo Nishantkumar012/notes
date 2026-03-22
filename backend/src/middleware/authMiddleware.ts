@@ -18,19 +18,26 @@ export const authMiddleware = (
   res: Response,
   next: NextFunction,
 ) => {
-  const header = req.headers.authorization;
+      const header = req.headers.authorization;
 
-  if (!header) {
-    res.status(401).json({
-      message: "Invalid header",
+      if (!header) {
+        return res.status(401).json({
+          message: "Invalid header",
+        });
+      }
+      // header m [1] pe token hoga
+      const token = header?.split(" ")[1];
+  //     console.log("token is",token);
+
+        if (!token) {
+    return res.status(401).json({
+      message: "Token missing",
     });
   }
-  // header m [1] pe token hoga
-  const token = header?.split(" ")[1];
-  //     console.log("token is",token);
+
   try {
     // decode m token ko verify kiya
-    const decoded = jwt.verify(token!, process.env.JWT_SECRET as string);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
 
     if (typeof decoded === "string") {
       return res.status(401).json({ message: "Invalid token" });

@@ -12,8 +12,9 @@ console.log("check kr rha hu", import.meta.env.VITE_API_URL);
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
   // console.log(token)
-
+  
   if (token) {
+      config.headers = config.headers || {}
     config.headers.Authorization = `Bearer ${token}`
   }
 
