@@ -62,7 +62,7 @@ jobs:
             cd practice_proj1/backend
 
             echo "Pull latest code"
-            git pull origin dev
+            git pull origin main
 
             echo "Install dependencies"
             npm ci

@@ -11,20 +11,25 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  // process.env.FRONTEND_URL,
-   "http://second-brain23.s3-website.ap-south-1.amazonaws.com",
+  "http://second-brain23.s3-website.ap-south-1.amazonaws.com",
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // Postman etc.
+      console.log("Incoming Origin:", origin);
 
-      if (allowedOrigins.includes(origin)) {
+      if (!origin) return callback(null, true);
+
+      const isAllowed = allowedOrigins.some((allowed) =>
+        origin === allowed || origin.startsWith(allowed)
+      );
+
+      if (isAllowed) {
         return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
       }
+
+      return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
   })
