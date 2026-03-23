@@ -36,7 +36,7 @@ app.use(
 );
 
 // 🔥 IMPORTANT
-app.options("*", cors());
+// app.options("*", cors());
 
 
 // pehle
