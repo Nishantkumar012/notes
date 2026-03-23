@@ -59,7 +59,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd practice_proj1/backend
+            cd notes/backend
 
             echo "Pull latest code"
             git pull origin main
