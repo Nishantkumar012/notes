@@ -14,24 +14,33 @@ const allowedOrigins = [
   "http://second-brain23.s3-website.ap-south-1.amazonaws.com",
 ];
 
+
+console.log("use ke andar")
 app.use(
   cors({
     origin: function (origin, callback) {
       console.log("Incoming Origin:", origin);
 
-      if (!origin) return callback(null, true);
-
+        console.log("origin aaya ", origin);
+     
+        if (!origin) return callback(null, true);
+         
+        
       const isAllowed = allowedOrigins.some((allowed) =>
         origin === allowed || origin.startsWith(allowed)
       );
-
+           
       if (isAllowed) {
+
+         console.log("agr allowed ho gya to");
         return callback(null, true);
       }
+         
+         console.log("agr allowed ho gya to");
 
       return callback(new Error("Not allowed by CORS"));
     },
-    credentials: true,
+    credentials: false,
   })
 );
 
