@@ -5,6 +5,7 @@ export const createNoteController = async (req: Request, res: Response) => {
   try {
     // const userId = (req as any).user.userId;
     const userId = req.userId;
+    
 
     const note = await createNote(userId, req.body);
 
