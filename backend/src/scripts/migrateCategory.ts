@@ -1,13 +1,7 @@
 // import "dotenv/config"; // ✅ always FIRST
 // import { prisma } from "../config/prisma";
 
-
-
 // console.log("DB URL:", process.env.DATABASE_URL);
-
-
-
-
 
 // async function main() {
 //   console.log("🚀 Starting migration...");
@@ -24,7 +18,6 @@
 //   }
 
 //   console.log("✅ Categories inserted");
-
 
 //   // 2. Fetch all categories
 //   const allCategories = await prisma.category.findMany();
