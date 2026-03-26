@@ -5,8 +5,8 @@
 export default function NotesPage() {
   return (
     <div>
-
-          <p>No need</p>
+      // just checking is everything okay
+      <p>No need</p>
     </div>
   )
 }
