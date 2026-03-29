@@ -94,7 +94,9 @@ function Signup() {
 
           <p className="text-center ">
             already have an account?{' '}
-            <span className="text-teal-500 cursor-pointer">log in</span>
+            <span className="text-teal-500 cursor-pointer"
+              onClick={() => navigate('/login')}
+            >log in</span>
           </p>
         </form>
       </div>

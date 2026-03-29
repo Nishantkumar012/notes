@@ -111,7 +111,9 @@ function Login() {
           </div>
           <p className="mt-5 text-center text-sm">
             Dont have account ?{' '}
-            <span className="text-teal-500 text-sm font-medium cursor-pointer">
+            <span className="text-teal-500 text-sm font-medium cursor-pointer"
+            
+              onClick={() => navigate('/signup')}>
               sign up
             </span>{' '}
           </p>
