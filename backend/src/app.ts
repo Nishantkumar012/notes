@@ -36,7 +36,7 @@ app.use(
         return callback(null, true);
       }
          
-         console.log("agr allowed ho gya to");
+         console.log("agr allowed nhi hua  to lag gye");
 
       return callback(new Error("Not allowed by CORS"));
     },
